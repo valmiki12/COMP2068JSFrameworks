@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width = device-width, initial-scale=1">
+   <meta name="robots" content="noindex, nofollow">
+   <meta name="description" content="HTML Final Project - Contact Page">
+   <title> Contact Page</title>
+   <link rel="stylesheet" href="./css/style.css">
+   <script src="./js/script.js"></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Handjet&display=swap" rel="stylesheet">
+</head>
+
+<body class="contact-section">
+   <header>
+      <a href="index.html">
+      <img src="./images/apple-logo-1.png" alt="apple-logo" class="a-logo show-image">
+   </a>
+      <div class="container">
+         <nav>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="about.html">About</a></li>
+               <li><a href="product.html">Product</a></li>
+               <li><a href="contact.html">Contact</a></li>
+            </ul>
+         </nav>
+      </div>
+   </header>
+   <!-- <section class="contact-section"> -->
+      <div class="contact-container">
+
+         <h3 class="Contact-us">Contact Us</h3>
+         <form id="contactForm">
+            <table>
+               <tr>
+                  <td><label for="Name" class="fcf-label">Your Name:</label></td>
+                  <td><input type="text" id="Name" name="Name" class="fcf-form-control" required></td>
+               </tr>
+
+               <tr>
+                  <td><label for="contact">Your Contact Number</label></td>
+                  <td><input type="number" id="contact" name="contact" class="fcf-form-contact"></td>
+               </tr>
+               <tr>
+                  <td><label for="email" class="fcf-label">Your E-mail Address:</label></td>
+                  <td><input type="email" id="Email" name="Email" class="fcf-form-control" required></td>
+               </tr>
+               <tr>
+                  <td><label for="Message" class="fcf-label">Your Message:</label></td>
+                  <td><textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000"
+                        required></textarea></td>
+               </tr>
+               <tr>
+                  <td><label for="contact reason">Contact Reason</label></td>
+                  <td>
+                     <select id="contact reason" name="contact reason">
+                        <option value="sales">Sales</option>
+                        <option value="help">Help</option>
+                        <option value="billing">Billing</option>
+                     </select>
+                  </td>
+               </tr>
+               <tr>
+                  <td><label for="newsletter">Join our newsletter</label></td>
+                  <td><input type="checkbox" id="newsletter" name="newsletter" value="newslettersignup"></td>
+               </tr>
+            </table>
+         </form>
+         <div class="send">
+            <button type="submit" onclick="handleSubmit(event)">Send</button>
+         </div>
+      </div>
+   <!-- </section> -->
+   <footer>Copyright © 1990 Apple Inc. All rights reserved.</footer>
+</body>
+
+</html>

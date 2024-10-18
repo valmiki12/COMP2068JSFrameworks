@@ -1,0 +1,324 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background: rgb(212, 208, 208);
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.cover-img {
+    position: absolute;
+    width: 100%;
+}
+
+.pre-order {
+    width: 350px;
+    box-shadow: black;
+}
+
+.mouse-fg {
+    font-size: 10px;
+}
+
+.three-images {
+    display: flex;
+    justify-content: center;
+}
+
+.a-logo {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    top: 15px;
+    opacity: 0;
+    /* Initially hide the image */
+    transform: translateY(100%);
+    /* Initially move the image down */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    /* Add transition properties */
+}
+
+.container {
+    padding-right: 10px;
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.tour {
+    font-size: large;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 50px;
+    background-color: white;
+    padding: 10px 20px;
+    padding-bottom: 30px;
+    border: 1px;
+    border-radius: 5px;
+    margin-top: 50%;
+
+}
+
+.image-pair {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.image-pair>.mc-1,
+.keyboard {
+    max-width: 70%;
+    box-shadow: black;
+}
+
+.image-pair>.mouse {
+    max-width: 10%;
+    height: auto;
+    box-shadow: black;
+}
+
+.image-pair figure:hover {
+    transform: scale(1.1);
+    box-shadow: black;
+}
+
+.start-tour-btn {
+    color: blue;
+    position: relative;
+    display: inline-block;
+    padding-right: 20px;
+    /* Add some space for the icon */
+}
+
+.start-tour-btn::after {
+    content: ">";
+    line-height: inherit;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease, text-decoration 0.3s ease;
+}
+
+.start-tour-btn:hover::after {
+    opacity: 1;
+}
+
+.start-tour-btn:hover {
+    text-decoration: underline;
+}
+
+.content {
+    text-align: center;
+}
+
+.home-page-content {
+    margin: 20%;
+    top: -40px;
+    right: 650px;
+    left: -230px;
+    position: absolute;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h2 {
+    position: absolute;
+    color: white;
+}
+
+nav {
+    background: white;
+    border-radius: 9px;
+}
+
+nav>ul>li {
+    display: inline-block;
+    font-size: larger;
+    margin: 20px;
+    text-align: center;
+    left: -20px;
+    cursor: pointer;
+    position: relative;
+}
+
+nav>ul>li:after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: rgb(212, 208, 208);
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    transition: 0.3s;
+}
+
+nav>ul>li:hover::after {
+    width: 100%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    position: sticky;
+}
+
+video {
+    width: 400px;
+    height: 225px;
+}
+
+.video {
+    position: absolute;
+    top: 690px;
+    left: 850px;
+}
+
+h3 {
+    padding-left: 30px;
+    color: white;
+}
+
+.h2 {
+    left: 850px;
+    position: relative;
+    top: 100px;
+}
+
+.hello {
+    font-family: 'Borel', cursive;
+    font-size: 3rem;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    color: white;
+}
+
+.show-hello {
+    opacity: 1;
+    /* Show the element */
+    transform: translateY(0);
+    /* Move the element back to its original position */
+}
+
+.show-image {
+    opacity: 1;
+    /* Show the image */
+    transform: translateY(0);
+    /* Move the image to its original position */
+}
+
+.steve-jobs {
+    width: 10%;
+    margin-right: 50%;
+}
+
+.abt-p1 {
+    width: 50%;
+}
+
+.abt-p2 {
+    margin-left: 50%;
+}
+
+.steve-jobs-fg {
+    font-size: 12px;
+    margin-right: 50%;
+}
+
+.gassee-pic {
+    width: 10%;
+    margin-left: 50%;
+    ;
+}
+
+.jlg-fg {
+    font-size: 12px;
+    margin-left: 50%;
+
+}
+
+.mc-1 {
+    display: flex;
+    justify-content: center;
+
+}
+
+.mouse {
+    width: 200px;
+}
+
+.about-content {
+    text-align: center;
+}
+
+
+.Contact-us {
+    color: black;
+    text-align: center;
+}
+
+table {
+    display: flex;
+    justify-content: center;
+}
+
+.send {
+    padding-left: 50%;
+}
+
+
+.abt-p3{
+    margin: 5%;
+}
+
+.contact-container {
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+    font-family: 'Handjet', cursive;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.contact-section {
+    background-image: url('../images/contact-img.jpeg');
+    background-size: cover;
+    background-position: center center;
+}
+
+.welcoming-header{
+    top: 160px;
+}
+
+.abt-4{
+
+}
+
+.abt-3{
+
+}

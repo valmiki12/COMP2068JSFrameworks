@@ -1,0 +1,686 @@
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: #1f2937; /* Dark, sleek navbar */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar .navbar-brand {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navbar .navbar-brand:hover {
+  color: #60a5fa; /* Subtle hover effect */
+}
+
+.navbar .navbar-nav .nav-link {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-right: 25px;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: #60a5fa;
+}
+
+.navbar .navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #60a5fa;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar .navbar-nav .nav-link:hover::before {
+  visibility: visible;
+  width: 100%;
+}
+
+.navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar .navbar-toggler {
+  border: none;
+}
+
+/* Hero Section Styling */
+.hero-section {
+  background: linear-gradient(135deg, #1f2937 30%, #111827 90%); /* Dark gradient for hero */
+  color: #ffffff;
+  padding: 150px 0;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-button {
+  font-size: 1.2rem;
+  padding: 14px 40px;
+  background-color: #60a5fa;
+  color: #ffffff;
+  border: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #3b82f6;
+  color: white;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Styling */
+section {
+  margin: 60px 0;
+  padding: 60px 0;
+  background-color: #ffffff;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+section h2 {
+  font-size: 2.8rem;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+section p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* About Me Section */
+.about-section {
+  background-color: #f9fafb; /* Light background */
+  padding: 60px 0;
+}
+
+.about-section .title {
+  font-size: 2.5rem;
+  color: #3b82f6;
+}
+
+.about-section .p1 {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.about-section .list-unstyled li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.about-section .btn {
+  font-size: 1.2rem;
+  padding: 12px 30px;
+  border-radius: 30px;
+}
+
+
+/* Projects Section Styles */
+.projects-section {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+}
+
+.project-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-header {
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.project-header h3 {
+  margin: 0;
+}
+
+.project-details {
+  padding-left: 20px;
+  margin-top: 15px;
+}
+
+.project-details li {
+  margin-bottom: 10px;
+}
+
+.badge {
+  font-size: 0.9rem;
+  padding: 8px 12px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.btn-outline-secondary {
+  border-color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: white;
+}
+
+
+/* Contact Section */
+.contact-section {
+  text-align: center;
+  background-color: #f0f2f5;
+  padding: 50px 0;
+}
+
+.contact-section p {
+  font-size: 1.3rem;
+  color: #555;
+}
+
+.contact-section a {
+  font-size: 1.2rem;
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-section a:hover {
+  color: #2563eb;
+}
+
+/* Let's Work Together (Call-to-Action) Section */
+.cta-section {
+  background-color: #3b82f6; /* Brighter background to make it stand out */
+  color: #ffffff; /* Light text for better visibility */
+  padding: 80px 0; /* Increased padding for more space */
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+.cta-section a {
+  font-size: 1.2rem;
+  padding: 12px 30px;
+  background-color: #ffffff;
+  color: #3b82f6;
+  border: 2px solid #ffffff;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-section a:hover {
+  background-color: #ffffff;
+  color: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+/* Footer */
+footer {
+  background-color: #1f2937;
+  color: white;
+  text-align: center;
+  padding: 40px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+footer p {
+  font-size: 1.2rem;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #60a5fa;
+}
+
+/* Experience Section */
+.experience-section {
+  background-color: #f9fafb;
+  color: #333;
+  padding: 80px 0;
+}
+
+.experience-title {
+  font-size: 2.8rem;
+  color: #3b82f6;
+  margin-bottom: 20px;
+}
+
+.experience-subtitle {
+  font-size: 1.5rem;
+  color: #212529;
+}
+
+.experience-duration {
+  color: #6c757d;
+}
+
+.experience-list li {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
+
+  section h2 {
+    font-size: 2.2rem;
+  }
+
+  .projects-section h3 {
+    font-size: 1.3rem;
+  }
+}
+
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none; /* Hidden by default */
+  font-size: 24px;
+  background-color: #007bff;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 12px 15px;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #0056b3;
+  color: white;
+  opacity: 0.8;
+}
+
+
+/* Abstract Background Gradients */
+.abstract-bg-gradient {
+  background: linear-gradient(120deg, #4e54c8, #8f94fb);
+}
+
+.abstract-bg-dark-gradient {
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+}
+
+.abstract-bg-light {
+  background: linear-gradient(135deg, #ece9e6, #ffffff);
+}
+
+.abstract-bg-gradient-dark {
+  background: linear-gradient(135deg, #0f2027, #2c5364);
+}
+
+/* Button Styles */
+.abstract-btn {
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.abstract-btn:hover {
+  background-color: #ff4c4c;
+  color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Titles */
+.abstract-title {
+  color: #4e54c8;
+}
+
+/* Card Styles */
+.abstract-card {
+  background-color: #f7f9fc;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.abstract-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Experience List */
+.experience-list li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.experience-subtitle {
+  color: #4e54c8;
+}
+
+/* General Styling */
+.text-dark {
+  color: #333;
+}
+
+.text-light {
+  color: #fff;
+}
+
+/* Hidden class initially hides the sections */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* When visible, animate the sections */
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Abstract Background Gradients */
+.abstract-bg-gradient {
+  background: linear-gradient(120deg, #1e3c72, #2a5298);
+}
+
+/* General Text Styling */
+.title-about {
+  color: #ffffff;
+  font-size: 2.8rem;
+}
+
+.title-about-sub {
+  color: #b2b8c1;
+  font-size: 2.2rem;
+}
+
+.text-about {
+  color: #e0e0e0;
+  font-size: 1.2rem;
+}
+
+.lead-intro {
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+/* Button Styling */
+.abstract-btn {
+  background-color: #ff6b6b;
+  color: #fff;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.abstract-btn:hover {
+  background-color: #ff4c4c;
+  color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Skill and Passion Lists */
+.list-skills li,
+.list-passions li {
+  margin-bottom: 10px;
+}
+
+/* Sections Styling */
+.section-about {
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.row {
+  margin-bottom: 40px;
+}
+
+/* Abstract Background Gradients */
+.abstract-bg-gradient {
+  background: linear-gradient(120deg, #4e54c8, #8f94fb);
+}
+
+/* Title Styling */
+.title-projects {
+  font-size: 2.8rem;
+  color: #ffffff;
+}
+
+/* Project Item Styling */
+.project-title {
+  color: black;
+}
+
+.project-description {
+  color: green;
+}
+
+.list-project li {
+  color: green;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Button Styling */
+.abstract-btn {
+  background-color: #ff6b6b;
+  color: #fff;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.abstract-btn:hover {
+  background-color: #ff4c4c;
+  color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* General Section Styling */
+.section-projects {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Abstract Background Gradients */
+.abstract-bg-gradient {
+  background: linear-gradient(120deg, #1e3c72, #2a5298);
+  padding: 80px 20px;
+}
+
+/* Form Label Styling */
+.form-label {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* Input Field Styling */
+.input-abstract {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 12px;
+  color: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-abstract:focus {
+  border-color: #00d8ff;
+  box-shadow: 0 0 10px rgba(0, 216, 255, 0.5);
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Button Styling */
+.abstract-btn {
+  background-color: #ff6b6b;
+  color: #fff;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.abstract-btn:hover {
+  background-color: #ff4c4c;
+  color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Styling */
+.section-contact {
+  text-align: center;
+}
+
+/* Title Styling */
+.section-contact h1 {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+}
+
+.section-contact h1 i {
+  margin-right: 10px;
+  color: #00d8ff;
+  font-size: 2.2rem;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .section-contact h1 {
+    font-size: 2rem;
+  }
+
+  .section-contact h1 i {
+    font-size: 1.8rem;
+  }
+}
+
+/* Sleek Translucent Navbar Styling */
+.sleek-navbar {
+  background-color: rgba(0, 0, 0, 0.5); /* Translucent black background */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Navbar Brand Styling */
+.sleek-brand {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* Navbar Toggler Styling */
+.sleek-toggler {
+  border: none;
+}
+
+.sleek-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Navbar Links Styling */
+.sleek-nav-items .nav-link {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 20px;
+  transition: color 0.3s ease;
+}
+
+.sleek-nav-items .nav-link:hover {
+  color: #00d8ff;
+}
+
+/* Transparent effect on scroll */
+.sleek-navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background when scrolled */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow when scrolled */
+}
