@@ -1,0 +1,18 @@
+<div class="hero">
+  <div class="hero-content">
+    <h1>Welcome to <span class="brand-name">Finance Tracker</span></h1>
+    {{#if user}}
+      <p class="welcome-message">Welcome, {{user.username}}!</p>
+      <div class="hero-buttons">
+        <a href="/finances" class="btn btn-primary">Manage My Finances</a>
+        <a href="/budget" class="btn btn-secondary">View My Budgets</a>
+      </div>
+    {{else}}
+      <p class="hero-description">Track your income, manage expenses, and achieve your financial goals effortlessly.</p>
+      <div class="hero-buttons">
+        <a href="/auth/login" class="btn btn-primary">Login</a>
+        <a href="/auth/register" class="btn btn-secondary">Register</a>
+      </div>
+    {{/if}}
+  </div>
+</div>

@@ -1,0 +1,97 @@
+<div class="container">
+  <h1>Budget Insights</h1>
+
+  <!-- Form to add or update a budget -->
+  <form method="POST" action="/budget/add">
+    <label for="type">Budget Type:</label>
+    <select id="type" name="type" required>
+      <option value="Monthly">Monthly</option>
+      <option value="Yearly">Yearly</option>
+    </select>
+
+    <label for="salary">Salary:</label>
+    <input type="number" id="salary" name="salary" placeholder="Enter your salary" required />
+
+    <label for="savings">Planned Savings:</label>
+    <input type="number" id="savings" name="savings" placeholder="Enter your planned savings" required />
+
+    <button type="submit">Add/Update Budget</button>
+  </form>
+
+  <h2>Your Total Expenses: ${{totalExpenses}}</h2>
+
+  <h2>Your Budgets</h2>
+  <ul>
+    {{#each budgets}}
+      <li>
+        <strong>{{type}} Budget</strong> <br />
+        Salary: ${{salary}} <br />
+        Planned Savings: ${{savings}} <br />
+        Suggested Spending Limit: ${{limit}} <br />
+
+        <!-- Delete Button -->
+        <form method="POST" action="/budget/delete" style="margin-top: 10px;">
+          <input type="hidden" name="type" value="{{type}}" />
+          <button type="submit" class="btn btn-danger">Delete {{type}} Budget</button>
+        </form>
+      </li>
+    {{/each}}
+  </ul>
+
+  <h2>Insights Chart</h2>
+  <div>
+    <canvas id="budgetChart" style="max-width: 100%;"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    fetch('/budget/charts')
+      .then((response) => response.json())
+      .then((data) => {
+        const labels = data.map((item) => item.type);
+        const salaries = data.map((item) => item.salary);
+        const savings = data.map((item) => item.savings);
+        const limits = data.map((item) => item.limit);
+
+        const ctx = document.getElementById('budgetChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: 'Salary',
+                data: salaries,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+              },
+              {
+                label: 'Planned Savings',
+                data: savings,
+                backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                borderColor: 'rgba(255, 206, 86, 1)',
+                borderWidth: 1,
+              },
+              {
+                label: 'Spending Limit',
+                data: limits,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: 'top',
+              },
+            },
+          },
+        });
+      })
+      .catch((error) => console.error('Error fetching chart data:', error));
+  </script>
+</div>

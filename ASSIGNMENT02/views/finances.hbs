@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>{{title}}</h1>
+
+  {{!-- Add New Finance Form --}}
+  <form method="POST" action="/finances/add" class="finance-form">
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <input type="text" name="category" id="category" class="form-control" placeholder="E.g., Groceries" required />
+    </div>
+    <div class="form-group">
+      <label for="amount">Amount:</label>
+      <input type="number" name="amount" id="amount" class="form-control" placeholder="E.g., 100" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+
+  {{!-- Finance Records --}}
+  <h2>Your Finances</h2>
+  {{#if finances.length}}
+  <ul class="finance-list">
+    {{#each finances}}
+    <li class="finance-item">
+      <div class="details">
+        <strong>{{category}}</strong>: ${{amount}}
+      </div>
+      <div class="actions">
+        <form method="POST" action="/finances/edit/{{_id}}" class="inline-form">
+          <input type="text" name="category" value="{{category}}" class="form-control" required />
+          <input type="number" name="amount" value="{{amount}}" class="form-control" required />
+          <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+        <form method="POST" action="/finances/delete/{{_id}}" class="inline-form">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+  {{else}}
+  <p>No finance records found. Add your first record above.</p>
+  {{/if}}
+</div>

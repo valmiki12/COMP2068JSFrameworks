@@ -1,0 +1,18 @@
+<header>
+  <div class="logo">
+    <a href="/">Finance Tracker</a>
+  </div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/finances">Finances</a></li>
+      <li><a href="/budget">Insights</a></li>
+      {{#if user}}
+        <li><a href="/auth/logout">Logout</a></li>
+      {{else}}
+        <li><a href="/auth/login">Login</a></li>
+        <li><a href="/auth/register">Register</a></li>
+      {{/if}}
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,10 @@
+<div>
+  <h1>Welcome to the Finance Tracker</h1>
+  <p>Track your income and expenses with ease!</p>
+  {{#if user}}
+    <a href="/finances" class="btn">Go to My Finances</a>
+  {{else}}
+    <a href="/auth/login" class="btn">Login</a>
+    <a href="/auth/register" class="btn">Register</a>
+  {{/if}}
+</div>

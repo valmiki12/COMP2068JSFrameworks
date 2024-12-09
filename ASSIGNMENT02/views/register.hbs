@@ -1,0 +1,14 @@
+<h1>Register</h1>
+<form method="POST" action="/auth/register">
+  {{#if error}}
+    <p style="color: red;">{{error}}</p>
+  {{/if}}
+  <label>Username:</label>
+  <input type="text" name="username" required />
+  <label>Password:</label>
+  <input type="password" name="password" required />
+  <label>Confirm Password:</label>
+  <input type="password" name="confirmPassword" required />
+  <button type="submit">Register</button>
+</form>
+<p>Already have an account? <a href="/auth/login">Login here</a></p>
