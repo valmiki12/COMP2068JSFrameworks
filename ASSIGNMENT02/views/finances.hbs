@@ -1,42 +1,59 @@
 <div class="container">
   <h1>{{title}}</h1>
 
+  {{!-- Flash Messages --}}
+  {{#if success_msg}}
+    <div class="alert alert-success">{{success_msg}}</div>
+  {{/if}}
+
+  {{#if error_msg}}
+    <div class="alert alert-danger">{{error_msg}}</div>
+  {{/if}}
+
+  {{!-- Search Bar --}}
+  <form method="GET" action="/finances" class="search-bar">
+    <input
+      type="text"
+      name="q"
+      placeholder="Search by category or amount"
+      value="{{query}}"
+      class="form-control"
+    />
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
   {{!-- Add New Finance Form --}}
-  <form method="POST" action="/finances/add" class="finance-form">
-    <div class="form-group">
+  <form method="POST" action="/finances/add">
+    <div>
       <label for="category">Category:</label>
-      <input type="text" name="category" id="category" class="form-control" placeholder="E.g., Groceries" required />
+      <input type="text" name="category" id="category" required />
     </div>
-    <div class="form-group">
+    <div>
       <label for="amount">Amount:</label>
-      <input type="number" name="amount" id="amount" class="form-control" placeholder="E.g., 100" required />
+      <input type="number" name="amount" id="amount" required />
     </div>
-    <button type="submit" class="btn btn-primary">Add</button>
+    <button type="submit" class="btn btn-success">Add</button>
   </form>
 
   {{!-- Finance Records --}}
   <h2>Your Finances</h2>
   {{#if finances.length}}
-  <ul class="finance-list">
-    {{#each finances}}
-    <li class="finance-item">
-      <div class="details">
-        <strong>{{category}}</strong>: ${{amount}}
-      </div>
-      <div class="actions">
-        <form method="POST" action="/finances/edit/{{_id}}" class="inline-form">
-          <input type="text" name="category" value="{{category}}" class="form-control" required />
-          <input type="number" name="amount" value="{{amount}}" class="form-control" required />
-          <button type="submit" class="btn btn-primary">Edit</button>
-        </form>
-        <form method="POST" action="/finances/delete/{{_id}}" class="inline-form">
-          <button type="submit" class="btn btn-danger">Delete</button>
-        </form>
-      </div>
-    </li>
-    {{/each}}
-  </ul>
+    <ul>
+      {{#each finances}}
+        <li>
+          <strong>{{category}}</strong>: ${{amount}}
+          <form method="POST" action="/finances/edit/{{_id}}" class="inline-form">
+            <input type="text" name="category" value="{{category}}" required />
+            <input type="number" name="amount" value="{{amount}}" required />
+            <button type="submit" class="btn btn-warning">Edit</button>
+          </form>
+          <form method="POST" action="/finances/delete/{{_id}}" class="inline-form">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+        </li>
+      {{/each}}
+    </ul>
   {{else}}
-  <p>No finance records found. Add your first record above.</p>
+    <p>No finance records found. Add your first record above.</p>
   {{/if}}
 </div>
