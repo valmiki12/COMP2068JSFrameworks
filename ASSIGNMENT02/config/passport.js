@@ -2,6 +2,8 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const GitHubStrategy = require('passport-github2').Strategy;
 const User = require('../models/User');
+require('dotenv').config();
+
 
 module.exports = (passport) => {
   // Local Strategy

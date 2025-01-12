@@ -5,7 +5,7 @@
       <i class="fas fa-envelope-open-text"></i> Contact Me
     </h1>
 
-    <form action="/contact" method="POST" class="row g-3 form-contact" onsubmit="showConfirmation(event)">
+    <form action="/contact" method="POST" class="row g-3 form-contact">
       <div class="col-md-6">
         <label for="name" class="form-label text-white">Full Name</label>
         <input type="text" class="form-control input-abstract" id="name" name="name" required placeholder="Enter your full name">
@@ -24,13 +24,3 @@
     </form>
   </div>
 </section>
-
-<!-- JavaScript to show confirmation pop-up -->
-<script>
-  function showConfirmation(event) {
-    event.preventDefault(); // Prevent form from submitting automatically
-    alert('Thank you! Your message has been submitted.');
-    // Optionally, submit the form after showing the message
-    event.target.submit();
-  }
-</script>
